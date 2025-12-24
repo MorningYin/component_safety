@@ -1,0 +1,82 @@
+# Unified Environment for Components Safety
+# This environment supports all pipeline stages including:
+# - Model wrappers (refusal_direction)
+# - Component-based classification
+# - Baseline classifiers (safety-eval)
+# - Open dataset evaluation
+#
+# Usage:
+#   conda env create -f environment.yaml
+#   conda activate component_safety
+
+name: component_safety
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.11
+  - pip
+  
+  # PyTorch ecosystem
+  - pytorch>=2.3.0
+  - pytorch-cuda=12.1
+  - torchvision
+  - torchaudio
+  
+  # Scientific computing
+  - numpy>=1.26.4
+  - scipy>=1.13.0
+  - pandas>=2.2.2
+  - scikit-learn>=1.4.2
+  
+  # Visualization
+  - matplotlib>=3.9.0
+  - seaborn
+  
+  # Utilities
+  - tqdm>=4.66.4
+  - pyyaml>=6.0.1
+  - psutil>=5.9.8
+  - joblib>=1.4.0
+  
+  # pip-only packages
+  - pip:
+    # Transformers ecosystem
+    - transformers>=4.44.2
+    - accelerate>=0.31.0
+    - tokenizers>=0.19.1
+    - datasets>=2.19.0
+    - huggingface-hub>=0.23.3
+    - safetensors>=0.4.3
+    - sentencepiece>=0.2.0
+    
+    # vLLM for fast inference (baseline classifiers)
+    - vllm>=0.5.0
+    
+    # Pydantic for configuration
+    - pydantic>=2.7.0
+    
+    # CLI tools
+    - typer>=0.12.3
+    - fire>=0.6.0
+    
+    # Type annotations
+    - jaxtyping>=0.2.29
+    - einops>=0.8.0
+    
+    # KDE for overlap computation
+    - KDEpy
+    
+    # Safety-eval dependencies
+    - alpaca-eval>=0.6.2
+    - fastchat>=0.1.0
+    - fschat>=0.2.36
+    
+    # Optional: Flash Attention (install separately if needed)
+    # - flash-attn>=2.5.0
+    
+    # Environment variables
+    - python-dotenv>=1.0.1

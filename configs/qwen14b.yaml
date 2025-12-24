@@ -1,0 +1,24 @@
+experiment_id: "qwen_14b_chat_standard"
+seed: 42
+model:
+  alias: "qwen-14b-chat"
+  path: "Qwen/Qwen-14B-Chat"
+  device: "cuda"
+  dtype: "float16"
+data:
+  # Use the synced defense data (full Alpaca + all raw harmful datasets except harmbench)
+  benign_path: "/root/LLM-Safety/components_safety/data/benign.json"
+  harmful_path: "/root/LLM-Safety/components_safety/data/harmful.json"
+  batch_size: 16 # 14B needs even smaller batch size
+direction:
+  method: "diff"
+search:
+  f1_tolerance: 0.0001
+  p_min: 0.2
+  p_max: 0.25
+  n_p: 20
+  m_min: 0.05
+  m_max: 0.10
+  n_m: 20
+evaluation:
+  num_autodan_goals: 128

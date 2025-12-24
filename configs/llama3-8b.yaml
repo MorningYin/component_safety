@@ -1,0 +1,24 @@
+experiment_id: "llama3_8b_it_standard"
+seed: 42
+model:
+  alias: "llama-3-8b-it"
+  path: "/root/autodl-tmp/Projects/LLaMA-3-8b-IT"
+  device: "cuda"
+  dtype: "float16"
+data:
+  # Use the synced defense data (full Alpaca + all raw harmful datasets except harmbench)
+  benign_path: "/root/LLM-Safety/components_safety/data/benign.json"
+  harmful_path: "/root/LLM-Safety/components_safety/data/harmful.json"
+  batch_size: 32
+direction:
+  method: "diff"
+search:
+  f1_tolerance: 0.0001
+  p_min: 0.2
+  p_max: 0.25
+  n_p: 20
+  m_min: 0.05
+  m_max: 0.10
+  n_m: 20
+evaluation:
+  num_autodan_goals: 128

@@ -1,0 +1,52 @@
+# Components Safety - Requirements
+# Use with existing conda/virtualenv that already has PyTorch+CUDA installed
+#
+# Usage:
+#   pip install -r requirements.txt
+
+# Transformers ecosystem  
+transformers>=4.44.2
+accelerate>=0.31.0
+tokenizers>=0.19.1
+datasets>=2.19.0
+huggingface-hub>=0.23.3
+safetensors>=0.4.3
+sentencepiece>=0.2.0
+
+# vLLM for baseline classifiers (requires CUDA)
+vllm>=0.5.0
+
+# Scientific computing
+numpy>=1.26.4
+scipy>=1.13.0
+pandas>=2.2.2
+scikit-learn>=1.4.2
+joblib>=1.4.0
+
+# Visualization
+matplotlib>=3.9.0
+seaborn
+
+# Pydantic for configuration
+pydantic>=2.7.0
+
+# CLI tools
+typer>=0.12.3
+fire>=0.6.0
+pyyaml>=6.0.1
+
+# Type annotations
+jaxtyping>=0.2.29
+einops>=0.8.0
+
+# KDE for overlap computation
+KDEpy
+
+# Progress bars and utilities
+tqdm>=4.66.4
+psutil>=5.9.8
+python-dotenv>=1.0.1
+
+# Safety-eval dependencies (optional, for baselines)
+# alpaca-eval>=0.6.2
+# fastchat>=0.1.0
