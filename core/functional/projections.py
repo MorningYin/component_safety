@@ -7,7 +7,7 @@ import numpy as np
 import torch
 
 from components_safety.utils.runner_util import MinimalHookRunner
-from refusal_direction.pipeline.model_utils.model_factory import ModelBase
+from components_safety.core.models.base import ModelBase
 
 
 # 组件 key 类型：tuple (module_type, layer, eoi_k) 或 (module_type, layer, eoi_k, head)

@@ -61,9 +61,9 @@ def _patched_load_dataset(path, name=None, **kwargs):
 
 datasets.load_dataset = _patched_load_dataset
 
-from src.classifier_models.base import SafetyClassifierBase, SafetyClassifierOutput, PromptHarmfulness
-from evaluation.tasks import load_evaluation_tasks, EvalMode
-from evaluation.utils import save_evaluation_report
+from components_safety.core.src.classifier_models.base import SafetyClassifierBase, SafetyClassifierOutput, PromptHarmfulness
+from components_safety.core.evaluation.tasks import load_evaluation_tasks, EvalMode
+from components_safety.core.evaluation.utils import save_evaluation_report
 
 # Import components_safety modules
 from components_safety.core.models import construct_model_base
